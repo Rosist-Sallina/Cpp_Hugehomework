@@ -130,7 +130,9 @@
     <ClInclude Include="design.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="basic_window.cpp" />
     <ClCompile Include="Choose-level.cpp" />
+    <ClCompile Include="design.cpp" />
     <ClCompile Include="main-code.cpp" />
   </ItemGroup>
   <ItemGroup>

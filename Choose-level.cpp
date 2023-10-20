@@ -4,11 +4,11 @@
 #include<fstream>
 #include<vector>
 
-int Choose_level()
+int* Choose_level(int* output)
 {
 	std::vector<std::string> passmessage;   //定义一个passmessage列表用于存储是否已经通过该关卡
 	std::ifstream fin;
-	std::vector<std::string> choose = { "level1","level2","level3","level4" };
+	std::vector<std::string> choose = { "A:level1","B:level2","C:level3","D:level4" };
 	int x = 0;
 	passmessage.resize(4);
 
@@ -40,48 +40,68 @@ int Choose_level()
 
 	char middle;
 	std::cin >> middle;
+	
+	int i = 0;
 
-	switch (middle)
-	{
-	case 'A':
+	
+	if ( middle == 'A')
 	{
 		std::cout << "You have chosen level1." << std::endl;
 		fin.open("./message/file1.txt");
 		if (!fin)
 		{
 			std::cerr << "Open this file ERROR";
-		}	break;
+		}	
+		while (!fin.eof() && i <100)
+		{
+			fin >> output[i];
+			++i;
+		}
 	}
-	case 'B':
+	if (middle == 'B')
 	{
 		std::cout << "You have chosen level2." << std::endl;
 		fin.open("./message/file2.txt");
 		if (!fin)
 		{
 			std::cerr << "But open this file ERROR";
-		} break;
-		
+		} 
+		while (!fin.eof())
+		{
+			fin >> output[i];
+			i++;
+		}
 	}
-	case 'C':
+	if (middle == 'C')
 	{
 		std::cout << "You have chosen level3." << std::endl;
 		fin.open("./message/file3.txt");
 		if (!fin)
 		{
 			std::cerr << "But open this file ERROR";
-		}    break;
+		}   
+		while (!fin.eof())
+		{
+			fin >> output[i];
+			i++;
+		}
 	}
-	case 'D':
+	if (middle == 'D')
 	{
 		std::cout << "You have chosen level4." << std::endl;
 		fin.open("./message/file4.txt");
 		if (!fin)
 		{
 			std::cerr << "But open this file ERROR";
-		}    break;
+		}    
+		while (!fin.eof())
+		{
+			fin >> output[i];
+			i++;
+		}
 	}
-	}                            //用switch语句选择界面并读取对应的关卡信息
+                            //用if语句选择界面并读取对应的关卡信息
 
-	return 0;
+	return output;
 }
 	

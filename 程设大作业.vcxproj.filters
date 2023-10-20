@@ -26,6 +26,12 @@
     <ClCompile Include="main-code.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="basic_window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="design.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="message\File1.txt">
