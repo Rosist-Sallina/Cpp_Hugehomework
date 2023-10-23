@@ -49,11 +49,32 @@ int* basicwindow(int* input)               //该程序主管图形界面
 		std::cout << input[i] << " , ";               //需输出的结果
 	}
 
-	std::cout << "\n\n\n\n";                          //图形界面正式开始
+	std::cout << "\n\n\n\n";            //图形界面正式开始
+
+
+
+	//==============================================================================================//
+	std::cout << "请输入你的指令"<<std::endl;
+	
+
+
+		 
+
+
+	//要求玩家输入需要的指令（该区块的位置可能调整以适应功能）
+
+	//==============================================================================================//
+
+
+
+	int* in = new int[input[1]];
+	int* out = new int[input[1]];
+
+	int type = 7;
+	int inhand = 8;                    //用于定义该模块中可能出现的数组，int整型等
 
 	std::cout << "     +---+";
-	int type = 7;
-
+	
 	//for (int type = 7; type < 30; type += 7)
 	//{
 		for (int i = 0; i < type; ++i)
@@ -64,6 +85,22 @@ int* basicwindow(int* input)               //该程序主管图形界面
 	//}
 	for (int i = 0; i < 10; ++i)
 		std::cout << " ";
+	std::cout << "+---+" << "\n";          //第一行的程序（未加循环使其能移动）
+
+	std::cout << "IN   ";
+	std::cout << "| " << input[2] << " |";
+	for (int i = 0; i < type; ++i)
+		std::cout << " ";                  //第二行传送带现有的东西
+
+	std::cout << "| " << inhand << " |";
+	for (int i = 0; i < 30 - type; ++i)
+		std::cout << " ";
+
+	for (int i = 0; i < 10; ++i)
+		std::cout << " ";
+
+	std::cout << "| " << out[1] << "| ";
+	std::cout << "   OUT";
 
 
 	return 0;

@@ -18,6 +18,9 @@
     <ClInclude Include="design.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="orderlist.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Choose-level.cpp">
@@ -30,6 +33,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="design.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="function.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
