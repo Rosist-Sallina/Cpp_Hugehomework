@@ -1,9 +1,13 @@
 #include"orderlist.h"
 #include<cmath>
 
-int inbox(int input)
+int* inbox(int* input , int N)
 {
-	return input;
+	for (int i = 0; i < N; ++i)
+	{
+		input[i] = input[i + 1];
+		return input;
+	}
 }
 
 int outbox(int output)

@@ -1,6 +1,8 @@
 #include <iostream>
 #include<cmath>
 #include"design.h"
+#include"orderlist.h"
+#include<vector>
 
 int* basicwindow(int* input)               //该程序主管图形界面
 {
@@ -54,9 +56,29 @@ int* basicwindow(int* input)               //该程序主管图形界面
 
 
 	//==============================================================================================//
-	std::cout << "请输入你的指令"<<std::endl;
-	
+	int N;
+	std::string** orderlist = new std::string*[N];
+	for (int i = 0;i<N;++i)
+		orderlist[i] = new std::string[2];
 
+
+	std::cout << "请输入你的指令"<<std::endl;
+	std::cin >> N;              //指令的数目
+	
+	std::string judge;
+	for (int i = 0; i<N; ++i)
+	{
+		std::cin >> judge;
+		if (isdigit(judge[0]) != 0)
+		{
+			orderlist[i - 1][2] = judge;
+			i -= 1;
+		}
+		else
+		{
+			orderlist[i][1] = judge;                    //将指令输入到二维数组judge中，并且第一个元素为指令，可能存在的二维项为其伴随参数
+		}
+	}
 
 		 
 
@@ -68,12 +90,13 @@ int* basicwindow(int* input)               //该程序主管图形界面
 
 
 	int* in = new int[input[1]];
-	int* out = new int[input[1]];
+	int* out = new int[input[1]];    //读取文件并将其添加到数组中作为调用基础
 
-	int type = 7;
-	int inhand = 8;                    //用于定义该模块中可能出现的数组，int整型等
 
-	std::cout << "     +---+";
+	int type = 7;                   //用于定义该模块中可能出现的数组，int整型等
+
+	/* std::cout << "     +---+";
+	
 	
 	//for (int type = 7; type < 30; type += 7)
 	//{
@@ -104,4 +127,16 @@ int* basicwindow(int* input)               //该程序主管图形界面
 
 
 	return 0;
-}
+}       */                     //试图改掉原来的代码
+
+	int* in = new int[input[1]];
+	int inhand;
+	int* onempty = new int[input[22]];
+	int* out = new int[input[1]];
+
+	inhand = in[0];
+	in = inbox(in, input[1]);
+
+	if()
+
+	

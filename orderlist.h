@@ -1,6 +1,6 @@
 #pragma once
 
-int inbox(int input);
+int* inbox(int* input , int N);
 int outbox(int output);
 int add(int input, int empty);
 int sub(int input, int empty);
