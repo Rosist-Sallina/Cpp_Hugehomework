@@ -136,6 +136,7 @@
     <ClCompile Include="design.cpp" />
     <ClCompile Include="function.cpp" />
     <ClCompile Include="main-code.cpp" />
+    <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="message\File1.txt" />

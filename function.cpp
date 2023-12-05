@@ -10,9 +10,14 @@ int* inbox(int* input , int N)
 	}
 }
 
-int outbox(int output)
+int* outbox(int* output , int N)
 {
-	return output;
+	for (int i = 0; i < N; ++i)
+	{
+		output[i + 1] = output[i];
+		return output;
+	}
+	
 }
 
 int copyfrom(int input, int empty)
