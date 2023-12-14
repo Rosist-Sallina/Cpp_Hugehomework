@@ -9,12 +9,7 @@ int main()
 	
 	int middle[10];
 	int *input = Choose_level(middle);
-	int* output = basicwindow(input);
-
-	//for (int i = 0; i < 9; ++i)
-	//{
-	//	std::cout << input[i] << " ";
-	//}          //检验指针是否导出成功
+	basicwindow(input);
 
 	return 0;
 

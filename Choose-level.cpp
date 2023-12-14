@@ -47,7 +47,7 @@ int* Choose_level(int* output)
 	if ( middle == 'A')
 	{
 		std::cout << "You have chosen level1." << std::endl;
-		fin.open("./message/file1.txt");
+		fin.open("./message/config1.txt");
 		if (!fin)
 		{
 			std::cerr << "Open this file ERROR";
@@ -61,7 +61,7 @@ int* Choose_level(int* output)
 	if (middle == 'B')
 	{
 		std::cout << "You have chosen level2." << std::endl;
-		fin.open("./message/file2.txt");
+		fin.open("./message/config2.txt");
 		if (!fin)
 		{
 			std::cerr << "But open this file ERROR";
@@ -75,7 +75,7 @@ int* Choose_level(int* output)
 	if (middle == 'C')
 	{
 		std::cout << "You have chosen level3." << std::endl;
-		fin.open("./message/file3.txt");
+		fin.open("./message/config3.txt");
 		if (!fin)
 		{
 			std::cerr << "But open this file ERROR";
@@ -89,7 +89,7 @@ int* Choose_level(int* output)
 	if (middle == 'D')
 	{
 		std::cout << "You have chosen level4." << std::endl;
-		fin.open("./message/file4.txt");
+		fin.open("./message/config4.txt");
 		if (!fin)
 		{
 			std::cerr << "But open this file ERROR";

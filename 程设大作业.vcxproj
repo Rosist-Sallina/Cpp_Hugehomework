@@ -139,7 +139,7 @@
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="message\File1.txt" />
+    <Text Include="message\config1.txt" />
     <Text Include="message\passmessage.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

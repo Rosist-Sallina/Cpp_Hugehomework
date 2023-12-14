@@ -43,10 +43,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="message\File1.txt">
+    <Text Include="message\passmessage.txt">
       <Filter>资源文件</Filter>
     </Text>
-    <Text Include="message\passmessage.txt">
+    <Text Include="message\config1.txt">
       <Filter>资源文件</Filter>
     </Text>
   </ItemGroup>
