@@ -83,7 +83,7 @@ int* basicwindow(int* input)               //该程序主管图形界面
 	cin >> help;
 
 	if (help == 'Y' || help == 'y') {
-		cout << "Which Language do you need?    [Chinese (C) / English (E) / Japanese (J)]";
+		label:cout << "Which Language do you need?    [Chinese (C) / English (E) / Japanese (J)]";
 		char language;
 		cin >> language;
 		switch (language){
@@ -122,11 +122,19 @@ int* basicwindow(int* input)               //该程序主管图形界面
 			cout << "add x - 手に持っているアイテムにx番目のスロットのアイテムを加算します。\n";
 			cout << "sub x - 手に持っているアイテムからx番目のスロットのアイテムを減算します。\n";
 			cout << "jump x - 現在実行中のコマンドをコマンド番号xに変更します。 コマンド番号は1から始まります。\n";
-			cout << "jumpifzero x - 手に持っているアイテムが0の場合、現在実行中のコマンドをコマンド番号xに変更します。 コマンド番号は1から始まります。\n\n";
-
+			cout << "jumpifzero x - 手に持っているアイテムが0の場合、現在実行中のコマンドをコマンド番号xに変更します。 コマンド番号は1から始まります。\n";
 		}
 		}
 	}
+
+	cout << "Do you need Restart help?  Press r to restart.Press any other key to continue.";
+	char restart; cin >> restart;
+	if (restart == 'r')
+	{
+		goto label;
+		cout << "\n";
+	}
+
 	std::cout << "请输入你的指令" << std::endl;
 	std::cin >> N;              //指令的数目
 	system("cls");

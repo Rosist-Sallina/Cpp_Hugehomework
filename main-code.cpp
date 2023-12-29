@@ -31,7 +31,7 @@ int main()
 	this_thread::sleep_for(chrono::milliseconds(2000));
 	cout << "You will be a robot working in a Black Factory just as Tsinghua Univ.\n";
 	this_thread::sleep_for(chrono::milliseconds(2500));
-	cout << "here you need to complete a series of tasks to get the final GPA(Great Price Award).\n";
+	cout << "Here you need to complete a series of tasks to get the final GPA(Great Price Award).\n";
 	this_thread::sleep_for(chrono::milliseconds(3000));
 	cout << "So , Fight!\n\n";
 	this_thread::sleep_for(chrono::milliseconds(3000));
