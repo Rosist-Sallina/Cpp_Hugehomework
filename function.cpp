@@ -39,6 +39,7 @@ int add(int input, int empty)
 int sub(int input, int empty)
 {
 	input -= empty;
+	return input;
 }
 
 int jump(int input)

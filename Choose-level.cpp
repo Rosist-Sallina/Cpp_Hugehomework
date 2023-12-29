@@ -11,7 +11,6 @@ int* Choose_level(int* output)
 	std::vector<std::string> choose = { "A:level1","B:level2","C:level3","D:level4" };
 	int x = 0;
 	passmessage.resize(4);
-
 	for (int i = 0; i <= 3; ++i)
 	{
 		fin.open("./message/passmessage.txt");
