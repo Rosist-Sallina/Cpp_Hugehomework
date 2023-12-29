@@ -49,5 +49,11 @@
     <Text Include="message\config1.txt">
       <Filter>资源文件</Filter>
     </Text>
+    <Text Include="message\config2.txt">
+      <Filter>资源文件</Filter>
+    </Text>
+    <Text Include="message\config3.txt">
+      <Filter>资源文件</Filter>
+    </Text>
   </ItemGroup>
 </Project>
