@@ -65,7 +65,7 @@ int* basicwindow(int* input)               //该程序主管图形界面
 	std::cout << std::endl << "Output order: ";
 	vector<int> target;
 	int num_tar = input[31];
-	for (int i = 32; i <= 32 + num_tar -1; ++i)
+	for (int i = 32; i <= 32 + num_tar - 1; ++i)
 	{
 		std::cout << input[i] << "   ";               //需输出的结果
 		target.push_back(input[i]);
@@ -78,17 +78,55 @@ int* basicwindow(int* input)               //该程序主管图形界面
 	//==============================================================================================//
 	int N;
 
-	cout << "游戏玩法tips；\n" << "请通过一系列的指令使输入传送带的数字变成输出传送带的数字，指令解释以及样例如下：\n";
-	cout << "先输入一个数字代表指令的个数，随后再输入指令，其中指令数字之间请用空格隔开\n";
-	cout << "inbox 将输入传送带上的货物变成输出的货物\n";
-	cout << "outbox 将手上的货物放到传送带上\n";
-	cout << "copyto x 将手上的货物复制到x号空地上\n";
-	cout << "copyfrom x 将x号空地上的货物复制到手上\n";
-	cout << "add x 将手上的货物加上x号空地上的货物\n";
-	cout << "sub x 将手上的货物减掉x号空地上的货物\n";
-	cout << "jump x 将当前执行的指令转换为第x号指令，其中指令编号从1开始\n";
-	cout << "jumpifzero x 当手上的货物为0时，将当前执行的指令转换为第x号指令，其中指令编号从1开始\n\n";
+	cout << "Do You need Help?	(Y/N)";
+	char help;
+	cin >> help;
 
+	if (help == 'Y' || help == 'y') {
+		cout << "Which Language do you need?    [Chinese (C) / English (E) / Japanese (J)]";
+		char language;
+		cin >> language;
+		switch (language){
+		case 'C': {
+			cout << "游戏玩法tips；\n" << "请通过一系列的指令使输入传送带的数字变成输出传送带的数字，指令解释以及样例如下：\n";
+			cout << "先输入一个数字代表指令的个数，随后再输入指令，其中指令数字之间请用空格隔开\n";
+			cout << "inbox 将输入传送带上的货物变成输出的货物\n";
+			cout << "outbox 将手上的货物放到传送带上\n";
+			cout << "copyto x 将手上的货物复制到x号空地上\n";
+			cout << "copyfrom x 将x号空地上的货物复制到手上\n";
+			cout << "add x 将手上的货物加上x号空地上的货物\n";
+			cout << "sub x 将手上的货物减掉x号空地上的货物\n";
+			cout << "jump x 将当前执行的指令转换为第x号指令，其中指令编号从1开始\n";
+			cout << "jumpifzero x 当手上的货物为0时，将当前执行的指令转换为第x号指令，其中指令编号从1开始\n\n";
+		}
+		case 'E': {
+			cout << "Gameplay tips:\n" << "To transform the numbers on the input conveyor belt into the numbers on the output conveyor belt, follow a series of commands. Command explanations and examples are as follows:\n";
+			cout << "Start by entering a number representing the number of commands, then enter the commands separated by spaces.\n";
+			cout << "inbox - Take the item on the input conveyor belt and make it the item in hand.\n";
+			cout << "outbox - Place the item in hand onto the conveyor belt.\n";
+			cout << "copyto x - Copy the item in hand to slot x.\n";
+			cout << "copyfrom x - Copy the item in slot x to the hand.\n";
+			cout << "add x - Add the item in hand to the item in slot x.\n";
+			cout << "sub x - Subtract the item in slot x from the item in hand.\n";
+			cout << "jump x - Change the currently executing command to the command number x, where command numbers start from 1.\n";
+			cout << "jumpifzero x - If the item in hand is 0, change the currently executing command to the command number x, where command numbers start from 1.\n\n";
+
+		}
+		case 'J': {
+			cout << "ゲームのプレイ方法のヒント：\n" << "一連のコマンドを使用して、入力コンベアベルトの数字を出力コンベアベルトの数字に変換します。 コマンドの説明と例は次のとおりです：\n";
+			cout << "まず、コマンドの数を表す数字を入力し、次にスペースで区切ってコマンドを入力します。\n";
+			cout << "inbox - 入力コンベアベルトのアイテムを手に取ります。\n";
+			cout << "outbox - 手に持っているアイテムをコンベアベルトに置きます。\n";
+			cout << "copyto x - 手に持っているアイテムをx番目のスロットにコピーします。\n";
+			cout << "copyfrom x - x番目のスロットのアイテムを手にコピーします。\n";
+			cout << "add x - 手に持っているアイテムにx番目のスロットのアイテムを加算します。\n";
+			cout << "sub x - 手に持っているアイテムからx番目のスロットのアイテムを減算します。\n";
+			cout << "jump x - 現在実行中のコマンドをコマンド番号xに変更します。 コマンド番号は1から始まります。\n";
+			cout << "jumpifzero x - 手に持っているアイテムが0の場合、現在実行中のコマンドをコマンド番号xに変更します。 コマンド番号は1から始まります。\n\n";
+
+		}
+		}
+	}
 	std::cout << "请输入你的指令" << std::endl;
 	std::cin >> N;              //指令的数目
 	system("cls");

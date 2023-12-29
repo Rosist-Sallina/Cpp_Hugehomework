@@ -17,16 +17,24 @@ int main()
 	this_thread::sleep_for(chrono::milliseconds(700));
 	cout << "| $$  $$$\\ $$|  $$$$$$\\| $$|  $$$$$$$|  $$$$$$\\| $$$$$$\\$$$$\\|  $$$$$$\\\n";
 	this_thread::sleep_for(chrono::milliseconds(700));
-	cout << "| $$ $$\\$$\$$| $$    $$| $$| $$      | $$  | $$| $$ | $$ | $$| $$    $$\n";
+	cout << "| $$ $$\\$$\\$$| $$    $$| $$| $$      | $$  | $$| $$ | $$ | $$| $$    $$\n";
 	this_thread::sleep_for(chrono::milliseconds(700));
 	cout << "| $$$$  \\$$$$| $$$$$$$$| $$| $$_____ | $$__/ $$| $$ | $$ | $$| $$$$$$$$\n";
 	this_thread::sleep_for(chrono::milliseconds(700));
 	cout << "| $$$    \\$$$ \\$$     \\| $$ \\$$     \\ \\$$    $$| $$ | $$ | $$ \$$     \\\n";
 	this_thread::sleep_for(chrono::milliseconds(700));
-	cout << "   \\$$      \\$$  \\$$$$$$$ \\$$  \\$$$$$$$  \\$$$$$$  \\$$  \\$$  \\$$  \\$$$$$$$\n\n\n";
+	cout << " \\$$      \\$$  \\$$$$$$$ \\$$  \\$$$$$$$  \\$$$$$$  \\$$  \\$$  \\$$  \\$$$$$$$\n\n\n";
 	this_thread::sleep_for(chrono::milliseconds(700));
 
+
 	std::cout << "Welcome to the game.\n";
+	this_thread::sleep_for(chrono::milliseconds(2000));
+	cout << "You will be a robot working in a Black Factory just as Tsinghua Univ.\n";
+	this_thread::sleep_for(chrono::milliseconds(2500));
+	cout << "here you need to complete a series of tasks to get the final GPA(Great Price Award).\n";
+	this_thread::sleep_for(chrono::milliseconds(3000));
+	cout << "So , Fight!\n\n";
+	this_thread::sleep_for(chrono::milliseconds(3000));
 	std::cout << "Please choose your level.\n";
 	
 	int middle[10];
