@@ -9,6 +9,7 @@
 #include<fstream>
 
 void gameover() {
+	getchar();
 	system("cls");
 	std::cout << "Congratulations , You are game over) , thanks for you play. \n\n";
 	cout << "Press Enter to exit.";
@@ -22,7 +23,7 @@ int* basicwindow(int* input)               //该程序主管图形界面
 	std::cout << std::endl << std::endl << "---------------------START---------------------" << std::endl << std::endl << std::endl;
 	bool hand_up = 0;
 
-	std::cout << "Level infprmation:   " << std::endl;      //输出关卡信息
+	std::cout << "Level information:   " << std::endl;      //输出关卡信息
 	std::cout << "level: " << input[0] << std::endl;            //级别
 	std::cout << "Inbox block: " << input[1] << std::endl;     //积木数目
 	std::cout << "block information: ";
@@ -86,6 +87,7 @@ int* basicwindow(int* input)               //该程序主管图形界面
 		label:cout << "Which Language do you need?    [Chinese (C) / English (E) / Japanese (J)]";
 		char language;
 		cin >> language;
+		cout << "\n";
 		switch (language){
 		case 'C': {
 			cout << "游戏玩法tips；\n" << "请通过一系列的指令使输入传送带的数字变成输出传送带的数字，指令解释以及样例如下：\n";
@@ -98,6 +100,7 @@ int* basicwindow(int* input)               //该程序主管图形界面
 			cout << "sub x 将手上的货物减掉x号空地上的货物\n";
 			cout << "jump x 将当前执行的指令转换为第x号指令，其中指令编号从1开始\n";
 			cout << "jumpifzero x 当手上的货物为0时，将当前执行的指令转换为第x号指令，其中指令编号从1开始\n\n";
+			break;
 		}
 		case 'E': {
 			cout << "Gameplay tips:\n" << "To transform the numbers on the input conveyor belt into the numbers on the output conveyor belt, follow a series of commands. Command explanations and examples are as follows:\n";
@@ -110,7 +113,7 @@ int* basicwindow(int* input)               //该程序主管图形界面
 			cout << "sub x - Subtract the item in slot x from the item in hand.\n";
 			cout << "jump x - Change the currently executing command to the command number x, where command numbers start from 1.\n";
 			cout << "jumpifzero x - If the item in hand is 0, change the currently executing command to the command number x, where command numbers start from 1.\n\n";
-
+			break;
 		}
 		case 'J': {
 			cout << "ゲームのプレイ方法のヒント：\n" << "一連のコマンドを使用して、入力コンベアベルトの数字を出力コンベアベルトの数字に変換します。 コマンドの説明と例は次のとおりです：\n";
@@ -122,17 +125,17 @@ int* basicwindow(int* input)               //该程序主管图形界面
 			cout << "add x - 手に持っているアイテムにx番目のスロットのアイテムを加算します。\n";
 			cout << "sub x - 手に持っているアイテムからx番目のスロットのアイテムを減算します。\n";
 			cout << "jump x - 現在実行中のコマンドをコマンド番号xに変更します。 コマンド番号は1から始まります。\n";
-			cout << "jumpifzero x - 手に持っているアイテムが0の場合、現在実行中のコマンドをコマンド番号xに変更します。 コマンド番号は1から始まります。\n";
+			cout << "jumpifzero x - 手に持っているアイテムが0の場合、現在実行中のコマンドをコマンド番号xに変更します。 コマンド番号は1から始まります。\n\n";
+			break;
 		}
 		}
-	}
-
-	cout << "Do you need Restart help?  Press r to restart.Press any other key to continue.";
-	char restart; cin >> restart;
-	if (restart == 'r')
-	{
-		goto label;
-		cout << "\n";
+		cout << "Do you need Restart help?  Press r to restart.Press any other key to continue.";
+		char restart; cin >> restart;
+		if (restart == 'r')
+		{
+			goto label;
+			cout << "\n";
+		}
 	}
 
 	std::cout << "请输入你的指令" << std::endl;
@@ -158,6 +161,7 @@ int* basicwindow(int* input)               //该程序主管图形界面
 	if (orderlist[N - 1][0] != "outbox") {
 		cin >> orderlist[N - 1][1];
 	}
+
 
 	//要求玩家输入需要的指令（该区块的位置可能调整以适应功能）
 

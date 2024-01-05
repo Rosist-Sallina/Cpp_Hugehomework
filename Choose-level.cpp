@@ -8,20 +8,18 @@ int* Choose_level(int* output)
 {
 	std::vector<std::string> passmessage;   //定义一个passmessage列表用于存储是否已经通过该关卡
 	std::ifstream fin;
-	std::vector<std::string> choose = { "A:level1","B:level2","C:level3","D:level4" };
+	std::vector<std::string> choose = { "A:level1","B:level2","C:level3","D:level4","E:Level5"};
 	int x = 0;
-	passmessage.resize(4);
-	for (int i = 0; i <= 3; ++i)
+	passmessage.resize(5);
+	fin.open("./message/passmessage.txt");
+	if (!fin)
 	{
-		fin.open("./message/passmessage.txt");
-		if (!fin)
-		{
-			std::cerr << "Open this file ERROR——";
-		}
+		std::cerr << "Open this file ERROR——";
+	}
 
+	for (int i = 0; i <= 4; ++i)
+	{
 		fin >> passmessage[i]; //读取文档信息用于识别
-		fin.close();
-
 		std::cout << choose[i];
 		if (passmessage[i] == "passed")
 			std::cout << "       (passed)      ";
@@ -34,6 +32,7 @@ int* Choose_level(int* output)
 			x = 0;
 		}
 	}
+	fin.close();
 
 	std::cout << "Please enter you choice:" << std::endl;  //开始选择支
 
@@ -93,6 +92,20 @@ int* Choose_level(int* output)
 		{
 			std::cerr << "But open this file ERROR";
 		}    
+		while (!fin.eof())
+		{
+			fin >> output[i];
+			i++;
+		}
+	}
+	if (middle == 'E')
+	{
+		std::cout << "You have chosen level5." << std::endl;
+		fin.open("./message/config5.txt");
+		if (!fin)
+		{
+			std::cerr << "But open this file ERROR";
+		}
 		while (!fin.eof())
 		{
 			fin >> output[i];

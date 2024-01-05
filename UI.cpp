@@ -288,10 +288,17 @@ void UI(vector<vector<string>> orderlist, int position, int inhand, int* in, int
 	for (int j = 0; j < num_of_empty; j++) {
 		cout << "+---+";
 	}                                                              
-	cout << "      +---+          |\n";                             //第十三行
+	cout << "      +---+          | ";                             
+	if (num_of_order >= 12) {
+		if (x == 11) { cout << "> "; }
+		else cout << "  ";
+		cout << "12 " << orderlist[11][0] << " ";
+		if (stoi(orderlist[11][1]) != 114514) { cout << orderlist[11][1] << ""; }
+		else cout << "";
+	}                                                     //第十三行
 
 
-	cout << "     |";
+	cout << "\n     |";
 	if (in[4] == 114514 || in[4] == 0) { cout << " X" << " |     "; }
 	else {
 		if (in[4] >= 0 && in[4] < 10)
@@ -310,19 +317,25 @@ void UI(vector<vector<string>> orderlist, int position, int inhand, int* in, int
 	cout << "      |";
 	if (out[4] == 114514) {
 		cout << " X";
-		cout << " |          | \n";
+		cout << " |          | ";
 	}
 	else {
 		if (out[4] >= 10 || (out[4] < 0 && out[4] >= -10)) {
-			cout << " " << out[4] << "|          |\n";
+			cout << " " << out[4] << "|          | ";
 		}
 		else if (out[4] <= -10) {
-			cout << out[4] << "|          |\n";
+			cout << out[4] << "|          |";
 		}
-		else { cout << " " << out[4] << " |          |\n"; }
-	}			                                                          //第十四行
-
-	cout << "     +---+     ";
+		else { cout << " " << out[4] << " |          | "; }
+	}
+	if (num_of_order >= 13) {
+		if (x == 12) { cout << "> "; }
+		else cout << "  ";
+		cout << "13 " << orderlist[12][0] << " ";
+		if (stoi(orderlist[12][1]) != 114514) { cout << orderlist[12][1] << ""; }
+		else cout << "";//第十四行
+	}
+	cout << "\n     +---+     ";
 	for (int i = 0; i < 5 * num_of_empty; i++) {
 		cout << " ";
 	}
@@ -484,8 +497,3 @@ void UI(vector<vector<string>> orderlist, int position, int inhand, int* in, int
 
 	getchar();
 }
-
-
-//8 inbox copyto 2 add 2 copyto 3 add 3 sub 2 outbox jump 1
-//11 inbox copyto 0 inbox copyto 1 copyfrom 0 sub 1 outbox copyfrom 1 sub 0 outbox jump 1
-//9 inbox copyto 0 inbox sub 0 jumpifzero 7 jump 1 copyfrom 0 outbox jump 1

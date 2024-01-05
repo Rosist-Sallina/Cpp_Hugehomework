@@ -1,3 +1,8 @@
+//4 inbox outbox inbox outbox
+//11 inbox copyto 0 inbox copyto 1 copyfrom 0 sub 1 outbox copyfrom 1 sub 0 outbox jump 1
+//9 inbox copyto 0 inbox sub 0 jumpifzero 7 jump 1 copyfrom 0 outbox jump 1
+//13 inbox copyto 0 add 0 copyto 0 add 0 copyto 1 add 1 add 0 copyto 2 sub 2 sub 2 outbox jump 1
+
 #include <iostream>
 #include"design.h"
 #include <fstream>
@@ -21,10 +26,10 @@ int main()
 	this_thread::sleep_for(chrono::milliseconds(700));
 	cout << "| $$$$  \\$$$$| $$$$$$$$| $$| $$_____ | $$__/ $$| $$ | $$ | $$| $$$$$$$$\n";
 	this_thread::sleep_for(chrono::milliseconds(700));
-	cout << "| $$$    \\$$$ \\$$     \\| $$ \\$$     \\ \\$$    $$| $$ | $$ | $$ \$$     \\\n";
+	cout << "| $$$    \\$$$ \\$$     \\| $$ \\$$     \\ \\$$    $$| $$ | $$ | $$ \\$$     \\\n";
 	this_thread::sleep_for(chrono::milliseconds(700));
 	cout << " \\$$      \\$$  \\$$$$$$$ \\$$  \\$$$$$$$  \\$$$$$$  \\$$  \\$$  \\$$  \\$$$$$$$\n\n\n";
-	this_thread::sleep_for(chrono::milliseconds(700));
+	this_thread::sleep_for(chrono::milliseconds(1000));
 
 
 	std::cout << "Welcome to the game.\n";
