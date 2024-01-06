@@ -1,4 +1,4 @@
-//4 inbox outbox inbox outbox
+//4 inbox outbox inbox out
 //11 inbox copyto 0 inbox copyto 1 copyfrom 0 sub 1 outbox copyfrom 1 sub 0 outbox jump 1
 //9 inbox copyto 0 inbox sub 0 jumpifzero 7 jump 1 copyfrom 0 outbox jump 1
 //13 inbox copyto 0 add 0 copyto 0 add 0 copyto 1 add 1 add 0 copyto 2 sub 2 sub 2 outbox jump 1

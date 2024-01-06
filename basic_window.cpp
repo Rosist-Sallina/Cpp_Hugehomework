@@ -138,9 +138,8 @@ int* basicwindow(int* input)               //该程序主管图形界面
 		}
 	}
 
-	std::cout << "请输入你的指令" << std::endl;
+	fliter:std::cout << "请输入你的指令" << std::endl;
 	std::cin >> N;              //指令的数目
-	system("cls");
 
 	vector<vector<string>> orderlist(N, vector<string>(2, "114514"));
 
@@ -162,11 +161,22 @@ int* basicwindow(int* input)               //该程序主管图形界面
 		cin >> orderlist[N - 1][1];
 	}
 
-
+	for (int i = 0; i < N; i++) {
+		if (orderlist[i][0] != "inbox" && orderlist[i][0] != "outbox" && orderlist[i][0] != "jump" && orderlist[i][0] != "jumpifzero" && orderlist[i][0] != "add" && orderlist[i][0] != "sub" && orderlist[i][0] != "copyto" && orderlist[i][0] != "copyfrom") {
+			cout << "Error on instruction " << i + 1 << endl;
+			cout << "please Enter again.\n";
+			goto fliter;
+		}
+		if ((stoi(orderlist[i][1]) >= input[22] || stoi(orderlist[i][1]) < 0) && stoi(orderlist[i][1]) != 114514) {
+			cout << "Error on instruction " << i + 1 << endl;
+			cout << "please Enter again.\n";
+			goto fliter;
+		}
+	}
 	//要求玩家输入需要的指令（该区块的位置可能调整以适应功能）
 
 	//==============================================================================================//
-
+	system("cls");
 	int inhand = 114514;       //手上的方块
 	vector<int> onempty(input[22], 114514);      //在空地里的方块
 	int out[20];           //输出的方块

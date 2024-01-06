@@ -37,7 +37,7 @@ int* Choose_level(int* output)
 	std::cout << "Please enter you choice:" << std::endl;  //开始选择支
 
 	char middle;
-	std::cin >> middle;
+	fliter:std::cin >> middle;
 	
 	int i = 0;
 
@@ -69,6 +69,12 @@ int* Choose_level(int* output)
 			fin >> output[i];
 			i++;
 		}
+		if (passmessage[0] != "passed")
+		{
+			std::cout << "You can't play this level." << std::endl;
+			cout << "please choose again." << endl;
+			goto fliter;
+		}
 	}
 	if (middle == 'C')
 	{
@@ -82,6 +88,12 @@ int* Choose_level(int* output)
 		{
 			fin >> output[i];
 			i++;
+		}
+		if (passmessage[1] != "passed")
+		{
+			std::cout << "You can't play this level." << std::endl;
+			cout << "please choose again." << endl;
+			goto fliter;
 		}
 	}
 	if (middle == 'D')
@@ -97,6 +109,12 @@ int* Choose_level(int* output)
 			fin >> output[i];
 			i++;
 		}
+		if (passmessage[2] != "passed")
+		{
+			std::cout << "You can't play this level." << std::endl;
+			cout << "please choose again." << endl;
+			goto fliter;
+		}
 	}
 	if (middle == 'E')
 	{
@@ -110,6 +128,12 @@ int* Choose_level(int* output)
 		{
 			fin >> output[i];
 			i++;
+		}
+		if (passmessage[3] != "passed")
+		{
+			std::cout << "You can't play this level." << std::endl;
+			cout << "please choose again." << endl;
+			goto fliter;
 		}
 	}
                             //用if语句选择界面并读取对应的关卡信息
