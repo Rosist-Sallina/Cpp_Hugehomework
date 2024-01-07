@@ -138,29 +138,59 @@ int* basicwindow(int* input)               //该程序主管图形界面
 		}
 	}
 
-	fliter:std::cout << "请输入你的指令" << std::endl;
-	std::cin >> N;              //指令的数目
-
+	fliter:cout << "Do you need File_input or Console_input?	(F/C)\n";
+	char choice;
+	cin >> choice;
 	vector<vector<string>> orderlist(N, vector<string>(2, "114514"));
 
-	std::string judge;
-	for (int i = 0; i < N; ++i)
-	{
-		std::cin >> judge;
-		if (isdigit(judge[0]))
-		{
-			orderlist[i - 1][1] = judge;
-			i -= 1;
-		}
-		else
-		{
-			orderlist[i][0] = judge;                    //将指令输入到二维数组judge中，并且第一个元素为指令，可能存在的二维项为其伴随参数
-		}
-	}
-	if (orderlist[N - 1][0] != "outbox") {
-		cin >> orderlist[N - 1][1];
-	}
+	if (choice == 'C') {
 
+	std::cout << "请输入你的指令" << std::endl;
+		std::cin >> N;              //指令的数目
+
+		std::string judge;
+		for (int i = 0; i < N; ++i)
+		{
+			std::cin >> judge;
+			if (isdigit(judge[0]))
+			{
+				orderlist[i - 1][1] = judge;
+				i -= 1;
+			}
+			else
+			{
+				orderlist[i][0] = judge;                    //将指令输入到二维数组judge中，并且第一个元素为指令，可能存在的二维项为其伴随参数
+			}
+		}
+		if (orderlist[N - 1][0] != "outbox") {
+			cin >> orderlist[N - 1][1];
+		}
+	}
+	else if (choice == 'F') {
+		ifstream fin;
+		fin.open("./message/order.txt");
+		int N;
+		fin >> N;
+		for (int i = 0; i < N; i++) {
+			fin >> orderlist[i][0];
+			if (orderlist[i][0] != "inbox" && orderlist[i][0] != "outbox" && orderlist[i][0] != "jump" && orderlist[i][0] != "jumpifzero" && orderlist[i][0] != "add" && orderlist[i][0] != "sub" && orderlist[i][0] != "copyto" && orderlist[i][0] != "copyfrom") {
+				cout << "Error on instruction " << i + 1 << endl;
+				cout << "please Enter again.\n";
+				goto fliter;
+			}
+			if (orderlist[i][0] == "inbox" || orderlist[i][0] == "outbox" || orderlist[i][0] == "jump" || orderlist[i][0] == "jumpifzero") {
+				continue;
+			}
+			else {
+				fin >> orderlist[i][1];
+			}
+		}
+		fin.close();
+	}
+	else {
+		cout << "Error on input.\n";
+		goto fliter;
+	}
 	for (int i = 0; i < N; i++) {
 		if (orderlist[i][0] != "inbox" && orderlist[i][0] != "outbox" && orderlist[i][0] != "jump" && orderlist[i][0] != "jumpifzero" && orderlist[i][0] != "add" && orderlist[i][0] != "sub" && orderlist[i][0] != "copyto" && orderlist[i][0] != "copyfrom") {
 			cout << "Error on instruction " << i + 1 << endl;

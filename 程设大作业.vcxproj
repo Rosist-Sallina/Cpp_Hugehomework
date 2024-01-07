@@ -144,6 +144,7 @@
     <Text Include="message\config1.txt" />
     <Text Include="message\config2.txt" />
     <Text Include="message\config3.txt" />
+    <Text Include="message\order.txt" />
     <Text Include="message\passmessage.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
